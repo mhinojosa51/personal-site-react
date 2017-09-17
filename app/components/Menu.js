@@ -1,5 +1,6 @@
 import React from 'react';
-import s from './app.css';
+import MenuItem from './MenuItem';
+
 const styles = {
 	container : {
 		width: '400px',
@@ -67,7 +68,9 @@ class Menu extends React.Component {
 						{<circle style={menuStyle}
 						cx="200" cy="200" r="180" stroke="black" strokeWidth="12" fill="none"  />}
 						<line style={topLine} x1="80" y1="110" x2="320" y2="110" stroke="black" strokeWidth="15" />
+						<MenuItem position={[140,160]} title="About" opened={this.state.menuOpen}/>
 						<line x1="80" y1="205" x2="320" y2="205" stroke="black" strokeWidth="15" />
+						<MenuItem position={[70,275]} title="Code Projects" opened={this.state.menuOpen} />
 						<line style={bottomLine} x1="80" y1="300" x2="320" y2="300" stroke="black" strokeWidth="15" />
 					</g>
 				</svg>
