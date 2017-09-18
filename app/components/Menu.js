@@ -5,7 +5,6 @@ const styles = {
 	container : {
 		width: '400px',
 		height: '400px',
-		border: '1px solid black',
 	},
 	svg : {
 		width: '100%',
@@ -31,6 +30,7 @@ class Menu extends React.Component {
 		}
 
 		this.handleMenuOpen = this.handleMenuOpen.bind(this);
+		this.handleMenuClick = this.handleMenuClick.bind(this);
 	}
 
 	handleMenuOpen(){
@@ -41,7 +41,8 @@ class Menu extends React.Component {
 		})
 	}
 
-	componentDidMount(){
+	handleMenuClick(title){
+		console.log(title);
 	}
 
 	render(){
@@ -68,9 +69,9 @@ class Menu extends React.Component {
 						{<circle style={menuStyle}
 						cx="200" cy="200" r="180" stroke="black" strokeWidth="12" fill="none"  />}
 						<line style={topLine} x1="80" y1="110" x2="320" y2="110" stroke="black" strokeWidth="15" />
-						<MenuItem position={[140,160]} title="About" opened={this.state.menuOpen}/>
+						<MenuItem position={[140,160]} title="About" opened={this.state.menuOpen} select={this.handleMenuClick}/>
 						<line x1="80" y1="205" x2="320" y2="205" stroke="black" strokeWidth="15" />
-						<MenuItem position={[70,275]} title="Code Projects" opened={this.state.menuOpen} />
+						<MenuItem position={[70,275]} title="Code Projects" opened={this.state.menuOpen} select={this.handleMenuClick}/>
 						<line style={bottomLine} x1="80" y1="300" x2="320" y2="300" stroke="black" strokeWidth="15" />
 					</g>
 				</svg>

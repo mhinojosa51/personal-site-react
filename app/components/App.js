@@ -6,7 +6,6 @@ const styles = {
 	container : {
 		width: '100%',
 		height: '100%',
-		border: '1px solid black',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -15,7 +14,7 @@ const styles = {
 
 class App extends React.Component {
 	render(){
-		
+
 		return (
 			<section style={styles.container}>
 				<Menu />
@@ -24,4 +23,4 @@ class App extends React.Component {
 	}
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
